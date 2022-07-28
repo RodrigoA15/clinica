@@ -105,8 +105,9 @@ class AtencionmedicaController extends Controller
      * @param  \App\Models\Atencionmedica  $atencionmedica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Atencionmedica $atencionmedica)
+    public function destroy($id)
     {
-        //
+        Atencionmedica::destroy($id);
+        return redirect()->route('atencion.index');
     }
 }

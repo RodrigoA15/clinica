@@ -14,31 +14,31 @@
             @csrf
             <div class="mb-3">
               <label  class="form-label">sintomas_paciente</label>
-              <input type="text" class="form-control" id="sintomas_paciente" name="sintomas_paciente" >
+              <input type="text" class="form-control" id="sintomas_paciente" name="sintomas_paciente" value="{{ $atencion->sintomas_paciente }}">
             </div>
             <div class="mb-3">
                 <label  class="form-label">diagnostico_paciente</label>
-                <input type="text" class="form-control" id="diagnostico_paciente" name="diagnostico_paciente">
+                <input type="text" class="form-control" id="diagnostico_paciente" name="diagnostico_paciente" value="{{ $atencion->diagnostico_paciente }}">
               </div>
                <div class="mb-3">
                 <label  class="form-label">tratamiento_paciente</label>
-                <input type="text" class="form-control" id="tratamiento_paciente" name="tratamiento_paciente">
+                <input type="text" class="form-control" id="tratamiento_paciente" name="tratamiento_paciente" value="{{ $atencion->tratamiento_paciente }}">
               </div> 
               <div class="mb-3">
                 <label  class="form-label">recomendacion_medico</label>
-                <input type="text" class="form-control" id="recomendacion_medico" name="recomendacion_medico">
+                <input type="text" class="form-control" id="recomendacion_medico" name="recomendacion_medico" value="{{ $atencion->recomendacion_medico }}">
               </div> 
               <div class="mb-3">
                 <label  class="form-label">requiere_autorizacion</label>
-                <input type="text" class="form-control" id="requiere_autorizacion" name="requiere_autorizacion">
+                <input type="text" class="form-control" id="requiere_autorizacion" name="requiere_autorizacion" value="{{ $atencion->requiere_autorizacion }}">
               </div>
               <div class="mb-3">
                 <label  class="form-label">numero_autorizacion</label>
-                <input type="text" class="form-control" id="numero_autorizacion" name="numero_autorizacion">
+                <input type="text" class="form-control" id="numero_autorizacion" name="numero_autorizacion" value="{{ $atencion->numero_autorizacion }}">
               </div>
               <div class="mb-3">
                 <label  class="form-label">id_historiaclinica</label>
-                <input type="text" class="form-control" id="id_historiaclinica" name="id_historiaclinica">
+                <input type="text" class="form-control" id="id_historiaclinica" name="id_historiaclinica" value="{{ $atencion->id_historiaclinica }}"">
               </div>
             
            

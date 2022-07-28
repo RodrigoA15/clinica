@@ -31,23 +31,24 @@
              @foreach ($atencion as $a )
              <tr>
                 <th scope="row">{{ $a->id}}</th>
-                <td scope="row">{{$a->sintomas_paciente }}</td>
+                <td scope="row">{{ $a->sintomas_paciente }}</td>
                 <td scope="row">{{ $a->diagnostico_paciente }}</td>
-                <td scope="row">{{$a->tratamiento_paciente }}</td 
-                <td scope="row">{{$a->recomendacion_medico}}</td>
-                <td scope="row">{{$a->requiere_autorizacion}}</td>
-                <td scope="row">{{$a->numero_autorizacion}}</td>
-                <td scope="row">{{$a->id_historiaclinica}}</td>
+                <td scope="row">{{ $a->tratamiento_paciente }}</td>
+                <td scope="row">{{ $a->recomendacion_medico }}</td>
+                <td scope="row">{{ $a->requiere_autorizacion }}</td>
+                <td scope="row">{{ $a->numero_autorizacion }}</td>
+                <td scope="row">{{ $a->id_historiaclinica }}</td>
+
 
                 <td>
                     <a href="{{route('atencion.edit', $a )}}" class="btn btn-warning">Editar</a>
 
 
-                    {{-- <form action="{{ route('pacientes.destroy', $ )}}" method="POST">
+                    <form action="{{ route('atencion.destroy', $a )}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form> --}}
+                    </form>
 
                 </td>
 
