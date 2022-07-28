@@ -14,7 +14,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        return \view ('paciente.index');
+        $paciente = Paciente::all();
+
+        return \view ('paciente.index', compact('paciente'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        return \view ('paciente.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $paciente = new Paciente;
+        $paciente->nombre_paciente = $request->nombre_paciente;
+        $paciente->apellido_paciente = $request->apellido_paciente;
+        $paciente->tipo_documento = $request->tipo_documento;
+        $paciente->telefono_paciente = $request->telefono_paciente;
+        $paciente->direccion_paciente = $request->direccion_paciente;
+
+        $paciente->save();
+
+        return redirect()->route('pacientes.index');
+
     }
 
     /**
@@ -55,9 +67,11 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
-        //
+        $paciente = Paciente::find($id);
+        return \view('paciente.edit', compact('paciente'));
+
     }
 
     /**
@@ -67,9 +81,18 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request, $id)
     {
-        //
+        $paciente = Paciente::find($id);
+        $paciente->nombre_paciente = $request->nombre_paciente;
+        $paciente->apellido_paciente = $request->apellido_paciente;
+        $paciente->tipo_documento = $request->tipo_documento;
+        $paciente->telefono_paciente = $request->telefono_paciente;
+        $paciente->direccion_paciente = $request->direccion_paciente;
+
+        $paciente->save();
+
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -78,8 +101,9 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy($id)
     {
-        //
+        Paciente::destroy($id);
+        return redirect()->route('pacientes.index');
     }
 }
