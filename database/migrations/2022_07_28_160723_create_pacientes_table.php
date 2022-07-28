@@ -22,8 +22,6 @@ class CreatePacientesTable extends Migration
             $table->string('telefono_paciente', 20);
             $table->string('direccion_paciente', 20);
 
-            
-        
             $table->timestamps();
 
         });

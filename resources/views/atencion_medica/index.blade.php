@@ -13,9 +13,9 @@
             <thead>
               <tr>
                 <th scope="col">id</th>
-                <th scope="col">Nombre paciente</th>
-                <th scope="col">Apellido Paciente</th>
-                <th scope="col">Tipo documento</th>
+                <th scope="col">Sintomas paciente</th>
+                <th scope="col">diagnostico Paciente</th>
+                <th scope="col">tratamiento</th>
                 <th scope="col">Telefono Paciente</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Acciones</th>
@@ -25,21 +25,20 @@
 
               </tr>
             </thead>
-            <tbody>
-             @foreach ($paciente as $pacientes)
+            {{-- <tbody>
+             @foreach ($ as $ )
              <tr>
                 <th scope="row">{{ $pacientes->id}}</th>
-
-                <td scope="row">{{ $pacientes->nombre_paciente }}</td>
-                <td scope="row">{{ $pacientes->apellido_paciente }}</td>
-                <td scope="row">{{ $pacientes->tipo_documento}}</td>
-                <td scope="row">{{ $pacientes->telefono_paciente }}</td>
-                <td scope="row">{{ $pacientes->direccion_paciente }}</td>
+                <td scope="row">{{ }}</td>
+                <td scope="row">{{  }}</td>
+                <td scope="row">{{ }}</td 
+                <td scope="row">{{  }}</td>
+                <td scope="row">{{ }}</td>
                 <td>
-                    <a href="{{route('pacientes.edit', $pacientes)}}" class="btn btn-warning">Editar</a>
+                    <a href="{{route('pacientes.edit', $ )}}" class="btn btn-warning">Editar</a>
 
 
-                    <form action="{{ route('pacientes.destroy', $pacientes)}}" method="POST">
+                    <form action="{{ route('pacientes.destroy', $ )}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -53,9 +52,9 @@
               </tr>
               
              @endforeach
-            </tbody>
+            </tbody> --}}
           </table>
-          <div class="d-flex justify-content-center">{{ $paciente->links() }}</div>
+          {{-- <div class="d-flex justify-content-center">{{ $paciente->links() }}</div> --}}
     </div>
 </body>
 </html>

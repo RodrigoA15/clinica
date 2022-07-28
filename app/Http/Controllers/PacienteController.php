@@ -14,7 +14,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $paciente = Paciente::all();
+        
+        $paciente = Paciente::Paginate(1);
 
         return \view ('paciente.index', compact('paciente'));
     }

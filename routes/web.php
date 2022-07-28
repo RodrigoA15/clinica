@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\AtencionmedicaController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,5 @@ Route::get('/', function () {
 });
 
 Route::resource('pacientes', PacienteController::class);
+
+Route::resource ('atencion', AtencionmedicaController::class);
