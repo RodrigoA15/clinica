@@ -14,7 +14,8 @@ class AtencionmedicaController extends Controller
      */
     public function index()
     {
-        return view('atencion_medica.index');
+        $atencion = Atencionmedica::all();
+        return view('atencion_medica.index', compact('atencion'));
     }
 
     /**
@@ -69,9 +70,10 @@ class AtencionmedicaController extends Controller
      * @param  \App\Models\Atencionmedica  $atencionmedica
      * @return \Illuminate\Http\Response
      */
-    public function edit(Atencionmedica $atencionmedica)
+    public function edit($id)
     {
-        //
+        $atencion = Atencionmedica::find($id);
+        return view('atencion_medica.edit', compact('atencion'));
     }
 
     /**
@@ -81,9 +83,20 @@ class AtencionmedicaController extends Controller
      * @param  \App\Models\Atencionmedica  $atencionmedica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Atencionmedica $atencionmedica)
+    public function update(Request $request, $id)
     {
-        //
+        $atencion = Atencionmedica::find($id);
+        $atencion->sintomas_paciente = $request->sintomas_paciente;
+        $atencion->diagnostico_paciente = $request->diagnostico_paciente;
+        $atencion->tratamiento_paciente = $request->tratamiento_paciente;
+        $atencion->recomendacion_medico = $request->recomendacion_medico;
+        $atencion->requiere_autorizacion = $request->requiere_autorizacion;
+        $atencion->numero_autorizacion = $request ->numero_autorizacion;
+        $atencion->id_historiaclinica = $request->id_historiaclinica;
+
+        $atencion->save();
+        return redirect()->route('atencion.index');
+        
     }
 
     /**

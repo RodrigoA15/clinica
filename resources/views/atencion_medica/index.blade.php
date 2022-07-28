@@ -16,8 +16,10 @@
                 <th scope="col">Sintomas paciente</th>
                 <th scope="col">diagnostico Paciente</th>
                 <th scope="col">tratamiento</th>
-                <th scope="col">Telefono Paciente</th>
-                <th scope="col">Direccion</th>
+                <th scope="col">Recomendacion</th>
+                <th scope="col">Autorizacion</th>
+                <th scope="col">Numero Autorizacion</th>
+                <th scope="col">Historia clinica No</th>
                 <th scope="col">Acciones</th>
 
 
@@ -25,24 +27,27 @@
 
               </tr>
             </thead>
-            {{-- <tbody>
-             @foreach ($ as $ )
+            <tbody>
+             @foreach ($atencion as $a )
              <tr>
-                <th scope="row">{{ $pacientes->id}}</th>
-                <td scope="row">{{ }}</td>
-                <td scope="row">{{  }}</td>
-                <td scope="row">{{ }}</td 
-                <td scope="row">{{  }}</td>
-                <td scope="row">{{ }}</td>
+                <th scope="row">{{ $a->id}}</th>
+                <td scope="row">{{$a->sintomas_paciente }}</td>
+                <td scope="row">{{ $a->diagnostico_paciente }}</td>
+                <td scope="row">{{$a->tratamiento_paciente }}</td 
+                <td scope="row">{{$a->recomendacion_medico}}</td>
+                <td scope="row">{{$a->requiere_autorizacion}}</td>
+                <td scope="row">{{$a->numero_autorizacion}}</td>
+                <td scope="row">{{$a->id_historiaclinica}}</td>
+
                 <td>
-                    <a href="{{route('pacientes.edit', $ )}}" class="btn btn-warning">Editar</a>
+                    <a href="{{route('atencion.edit', $a )}}" class="btn btn-warning">Editar</a>
 
 
-                    <form action="{{ route('pacientes.destroy', $ )}}" method="POST">
+                    {{-- <form action="{{ route('pacientes.destroy', $ )}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
+                    </form> --}}
 
                 </td>
 
@@ -52,7 +57,7 @@
               </tr>
               
              @endforeach
-            </tbody> --}}
+            </tbody>
           </table>
           {{-- <div class="d-flex justify-content-center">{{ $paciente->links() }}</div> --}}
     </div>
